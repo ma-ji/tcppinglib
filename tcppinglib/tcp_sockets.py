@@ -25,6 +25,7 @@
 '''
 
 import socket
+import socks
 import time
 
 from .exceptions import *
