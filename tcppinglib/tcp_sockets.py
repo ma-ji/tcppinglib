@@ -156,7 +156,7 @@ class TCPv4Socket(TCPSocket):
     Class for creating TCPv4 socket.
     """
 
-    def _create_socket(self, type, proto, proxy_type=request.proxy_type, proxy_addr=request.proxy_addr, proxy_port=request.proxy_port):
+    def _create_socket(self, type, proto, proxy_type, proxy_addr, proxy_port):
         """
         Create and return new socket.
         """
