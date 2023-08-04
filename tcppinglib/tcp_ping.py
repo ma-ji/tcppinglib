@@ -63,7 +63,7 @@ def tcpping(
             if sequence > 0:
                 time.sleep(interval)
 
-            request = TCPRequest(destination=address, port=port, timeout=timeout)
+            request = TCPRequest(destination=address, port=port, timeout=timeout, proxy_type=proxy_type, proxy_addr=proxy_addr, proxy_port=proxy_port)
 
             try:
                 sock.connect(request)
