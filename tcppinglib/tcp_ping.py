@@ -40,9 +40,8 @@ def tcpping(
     count: int = 5,
     interval: float = 3,
     print_errors: bool = False,
-    proxy_type=proxy_type, 
-    proxy_addr=proxy_addr, 
-    proxy_port=proxy_port
+    proxy_addr: str, 
+    proxy_port: int,
 ):
 
     address = strip_http_https(address)
