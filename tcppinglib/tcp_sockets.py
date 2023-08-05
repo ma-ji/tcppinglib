@@ -25,7 +25,6 @@
 '''
 
 import socket
-import socks
 import time
 
 from .exceptions import *
@@ -156,13 +155,11 @@ class TCPv4Socket(TCPSocket):
     Class for creating TCPv4 socket.
     """
 
-    def _create_socket(self, type, proto, proxy_addr, proxy_port):
+    def _create_socket(self, type, proto):
         """
         Create and return new socket.
         """
-        s = socks.socksocket(family=socket.AF_INET, type=type, proto=proto)
-        s.set_proxy(proxy_type=socks.SOCKS5, addr=proxy_addr, port=proxy_port)
-        return s
+        return socket.socket(family=socket.AF_INET, type=type, proto=proto)
 
     def _set_timeout(self, timeout):
         """

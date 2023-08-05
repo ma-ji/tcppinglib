@@ -40,8 +40,6 @@ def tcpping(
     count: int = 5,
     interval: float = 3,
     print_errors: bool = False,
-    proxy_addr: str, 
-    proxy_port: int,
 ):
 
     address = strip_http_https(address)
@@ -62,7 +60,7 @@ def tcpping(
             if sequence > 0:
                 time.sleep(interval)
 
-            request = TCPRequest(destination=address, port=port, timeout=timeout, proxy_type=proxy_type, proxy_addr=proxy_addr, proxy_port=proxy_port)
+            request = TCPRequest(destination=address, port=port, timeout=timeout)
 
             try:
                 sock.connect(request)
